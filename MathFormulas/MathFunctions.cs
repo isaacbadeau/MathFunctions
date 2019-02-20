@@ -43,7 +43,7 @@ namespace MathFunctions
 
         public static void CircleAreaCircum()
         {
-            
+            bool resume = true;
             bool circumArea = true;
             while (circumArea)
             {
@@ -61,14 +61,22 @@ namespace MathFunctions
                     
                     Console.WriteLine("The circumference of your circle is: {0}", circum);
                     Console.WriteLine("The area of your circle is: {0}", circleA);
-                    Console.Write("Would you like to evaluate another circle? ");
+                    
+                    Console.Write("Would you like to evaluate another circle? Yes or No? ");
                     string response = Console.ReadLine();
                     if (response == "yes" || response == "Yes" || response == "y" || response == "Y")
                     {
                         circumArea = true;
+
                     }
                     else if (response == "no" || response == "No" || response == "n" || response == "N")
                     {
+
+                        circumArea = false;
+                    }
+                   else
+                    {
+                        Console.WriteLine("You did not enter a valid selection, Good Bye!");
                         circumArea = false;
                     }
                 }
@@ -94,7 +102,7 @@ namespace MathFunctions
                     double radius = Convert.ToDouble(Console.ReadLine());
                     double volume = hemisphereV.HemisV(radius);
                     Console.WriteLine("The volume of your hemisphere is: {0}", volume);
-                    Console.Write("Would you like to evaluate another hemisphere? ");
+                    Console.Write("Would you like to evaluate another hemisphere? Yes or No? ");
                     string response = Console.ReadLine();
                     if (response == "yes" || response == "Yes" || response == "y" || response == "Y")
                     {
@@ -106,8 +114,9 @@ namespace MathFunctions
                     }
                     else
                     {
-                        Console.WriteLine("I did not understand.");
-                        Console.WriteLine("Would you like to evalute another hemisphere?");
+                        Console.WriteLine("You did not enter a valid selection, Good Bye!");
+                        hemisphereVolume = false;
+                        
                     }
                 }
                 catch (System.FormatException)
@@ -144,6 +153,11 @@ namespace MathFunctions
                     }
                     else if (response == "no" || response == "No" || response == "n" || response == "N")
                     {
+                        triangleArea = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You did not enter a valid selection, Good Bye!");
                         triangleArea = false;
                     }
                 }
@@ -190,6 +204,11 @@ namespace MathFunctions
                     }
                     else if (response == "no" || response == "No" || response == "n" || response == "N")
                     {
+                        quadraticEquation = false;
+                    }
+                    else
+                    {
+                        Console.WriteLine("You did not enter a valid selection, Good Bye!");
                         quadraticEquation = false;
                     }
                 }
