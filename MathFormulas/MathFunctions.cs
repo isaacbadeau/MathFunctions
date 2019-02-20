@@ -159,11 +159,11 @@ namespace MathFunctions
                     double plusValue = Math.Round(((-b + Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a)),2);
                     double minusValue = Math.Round(((-b - Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a)),2);
                     if (double.IsNaN(plusValue))
-                        Console.WriteLine("The first x value is not a real number!");
+                        Console.WriteLine("The first x value is not a real number");
                     else
                         Console.WriteLine("The first value for x is: {0}", plusValue);
                     if (double.IsNaN(minusValue))
-                        Console.WriteLine("The second x value is not a real number!");
+                        Console.WriteLine("The second x value is not a real number");
                     else
                         Console.WriteLine("The second value of x is: {0}", minusValue);
 
