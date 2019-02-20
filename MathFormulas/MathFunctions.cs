@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace MathFunctions
 {
-    class Program
+    public class MathFunctions
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             bool program = true;
             while (program)
@@ -158,9 +158,15 @@ namespace ConsoleApp1
                     double c = Convert.ToDouble(Console.ReadLine());
                     double plusValue = Math.Round(((-b + Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a)),2);
                     double minusValue = Math.Round(((-b - Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a)),2);
-                    
-                    Console.WriteLine("The first value of your quadratic is: {0}", plusValue);
-                    Console.WriteLine("The second value of your quadratic is: {0}", minusValue);
+                    if (double.IsNaN(plusValue))
+                        Console.WriteLine("The first x value is not a real number!");
+                    else
+                        Console.WriteLine("The first value for x is: {0}", plusValue);
+                    if (double.IsNaN(minusValue))
+                        Console.WriteLine("The second x value is not a real number!");
+                    else
+                        Console.WriteLine("The second value of x is: {0}", minusValue);
+
                     Console.Write("Would you like to evaluate another quadratic? ");
                     string response = Console.ReadLine();
                     if (response == "yes" || response == "Yes" || response == "y" || response == "Y")
