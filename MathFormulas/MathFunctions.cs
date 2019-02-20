@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MathFunctions;
 
 namespace MathFunctions
 {
     public class MathFunctions
     {
+        
         public static void Main(string[] args)
         {
+            
             bool program = true;
             while (program)
             {
@@ -38,20 +41,26 @@ namespace MathFunctions
 
 
 
-        static void CircleAreaCircum()
+        public static void CircleAreaCircum()
         {
+            
             bool circumArea = true;
             while (circumArea)
             {
                 try
                 {
+
+                    MathFunctions circleArea = new MathFunctions();
+                    MathFunctions circleCircum = new MathFunctions();
+
                     Console.WriteLine("Welcome to my program to calculate the area, and circumference of a circle.");
                     Console.Write("Please enter the radius of the circle in question: ");
                     double radius = Convert.ToDouble(Console.ReadLine());
-                    double circum = Math.Round((2 * Math.PI * radius),2);
-                    double area = Math.Round(((Math.PI) * Math.Pow(radius, 2)), 2);
+                    double circum = circleCircum.Circum(radius);
+                    double circleA = circleArea.CircleA(radius);
+                    
                     Console.WriteLine("The circumference of your circle is: {0}", circum);
-                    Console.WriteLine("The area of your circle is: {0}", area);
+                    Console.WriteLine("The area of your circle is: {0}", circleA);
                     Console.Write("Would you like to evaluate another circle? ");
                     string response = Console.ReadLine();
                     if (response == "yes" || response == "Yes" || response == "y" || response == "Y")
@@ -71,17 +80,19 @@ namespace MathFunctions
 
             }
         }
-        static void HemisphereVolume()
+        public static void HemisphereVolume()
         {
             bool hemisphereVolume = true;
             while (hemisphereVolume)
             {
                 try
                 {
+                    
+                    MathFunctions hemisphereV = new MathFunctions();
                     Console.WriteLine("Welcome to my program to calculate the volume of a hemisphere!");
                     Console.Write("Please enter the radius of your hemisphere: ");
                     double radius = Convert.ToDouble(Console.ReadLine());
-                    double volume = Math.Round((4 / 3) * Math.PI * Math.Pow(radius, 3) / 2, 2);
+                    double volume = hemisphereV.HemisV(radius);
                     Console.WriteLine("The volume of your hemisphere is: {0}", volume);
                     Console.Write("Would you like to evaluate another hemisphere? ");
                     string response = Console.ReadLine();
@@ -106,13 +117,15 @@ namespace MathFunctions
 
             }
         }
-        static void TriangleArea()
+        public static void TriangleArea()
         {
             bool triangleArea = true;
             while (triangleArea)
             {
                 try
                 {
+                    MathFunctions triArea = new MathFunctions();
+                    MathFunctions triP = new MathFunctions();
                     Console.WriteLine("Welcome to my program to calculate the area of a triangle!");
                     Console.Write("Please enter side one of your triangle: ");
                     double sideOne = Convert.ToDouble(Console.ReadLine());
@@ -120,8 +133,8 @@ namespace MathFunctions
                     double sideTwo = Convert.ToDouble(Console.ReadLine());
                     Console.Write("Please enter side three of your triangle: ");
                     double sideThree = Convert.ToDouble(Console.ReadLine());
-                    double p = (sideOne + sideTwo + sideThree) / 2;
-                    double area = Math.Round((Math.Sqrt(p * (p - sideOne) * (p - sideTwo) * (p - sideThree))),2);
+                    double p = triP.TriP(sideOne, sideTwo, sideThree);
+                    double area = triArea.TriA(sideOne, sideTwo, sideThree);
                     Console.WriteLine("The area of your triangle: {0}", area);
                     Console.Write("Would you like to evaluate another triangle? ");
                     string response = Console.ReadLine();
@@ -141,13 +154,15 @@ namespace MathFunctions
 
             }
         }
-        static void QuadraticEquation()
+        public static void QuadraticEquation()
         {
             bool quadraticEquation = true;
             while (quadraticEquation)
             {
                 try
                 {
+                    MathFunctions plusQuad = new MathFunctions();
+                    MathFunctions minusQuad = new MathFunctions();
                     Console.WriteLine("Welcome to my program to calculate a Quadratic Equation");
                     Console.WriteLine("Quadratics are in the form ax^2 + bx + c = 0");
                     Console.Write("Please enter the a value of your quadratic: ");
@@ -156,8 +171,8 @@ namespace MathFunctions
                     double b = Convert.ToDouble(Console.ReadLine());
                     Console.Write("Please enter the c value of your quadratic: ");
                     double c = Convert.ToDouble(Console.ReadLine());
-                    double plusValue = Math.Round(((-b + Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a)),2);
-                    double minusValue = Math.Round(((-b - Math.Sqrt(Math.Pow(b, 2) - (4 * a * c))) / (2 * a)),2);
+                    double plusValue = plusQuad.QuadPlus(a, b, c);
+                    double minusValue = minusQuad.QuadMinus(a, b, c);
                     if (double.IsNaN(plusValue))
                         Console.WriteLine("The first x value is not a real number");
                     else
@@ -184,6 +199,36 @@ namespace MathFunctions
                 }
 
             }
+        }
+        public double CircleA(double value)
+        {
+            return Math.Round(((Math.PI) * Math.Pow(value, 2)), 2);
+        }
+        public double Circum(double value)
+        {
+            return Math.Round(((Math.PI) * Math.Pow(value, 2)), 2);
+        }
+        public double HemisV(double value)
+        {
+            return ((4.0/ 3.0) * Math.PI * value*value*value)/2;
+        }
+        public double TriP(double value1, double value2, double value3)
+        {
+            return (value1 + value2 + value3) / 2;
+        }
+        public double TriA(double value1, double value2, double value3)
+        {
+            MathFunctions triP = new MathFunctions();
+            double p = triP.TriP(value1, value2, value3);
+            return Math.Round((Math.Sqrt(p * (p - value1) * (p - value2) * (p - value3))), 2);
+        }
+        public double QuadPlus(double value1, double value2, double value3)
+        {
+            return Math.Round(((-value2 + Math.Sqrt(Math.Pow(value2, 2) - (4 * value1 * value3))) / (2 * value1)), 2);
+        }
+        public double QuadMinus(double value1, double value2, double value3)
+        {
+            return Math.Round(((-value2 - Math.Sqrt(Math.Pow(value2, 2) - (4 * value1 * value3))) / (2 * value1)), 2);
         }
 
 
