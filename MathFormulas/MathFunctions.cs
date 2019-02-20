@@ -148,7 +148,7 @@ namespace MathFunctions
             {
                 try
                 {
-                    Console.WriteLine("Welcome to my program to calculate a Quadratic");
+                    Console.WriteLine("Welcome to my program to calculate a Quadratic Equation");
                     Console.WriteLine("Quadratics are in the form ax^2 + bx + c = 0");
                     Console.Write("Please enter the a value of your quadratic: ");
                     double a = Convert.ToDouble(Console.ReadLine());
