@@ -206,11 +206,11 @@ namespace MathFunctions
         }
         public double Circum(double value)
         {
-            return Math.Round(((Math.PI) * Math.Pow(value, 2)), 2);
+            return Math.Round(2*(Math.PI) * value, 2);
         }
         public double HemisV(double value)
         {
-            return ((4.0/ 3.0) * Math.PI * value*value*value)/2;
+            return Math.Round(((4.0/ 3.0) * Math.PI * Math.Pow(value, 3))/2, 2);
         }
         public double TriP(double value1, double value2, double value3)
         {
