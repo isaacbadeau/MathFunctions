@@ -199,9 +199,9 @@ namespace MathFunctions
                     Console.Write("Would you like to evaluate another quadratic? ");
                     string response = Console.ReadLine();
                     if (response == "yes" || response == "Yes" || response == "y" || response == "Y")
-                    {
+                    
                         quadraticEquation = true;
-                    }
+                    
                     else if (response == "no" || response == "No" || response == "n" || response == "N")
                     {
                         quadraticEquation = false;
