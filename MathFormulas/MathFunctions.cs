@@ -43,7 +43,6 @@ namespace MathFunctions
 
         public static void CircleAreaCircum()
         {
-            bool resume = true;
             bool circumArea = true;
             while (circumArea)
             {
