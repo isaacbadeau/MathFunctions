@@ -5,6 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using MathFunctions;
 
+//I feel like in the future I could have made interfaces/classes, and case/switch statements for a lot of
+//my procedures.  I just don't really know how to do it yet. This program works, but I'm sure I will look back and realize I could have done differently.
+
 namespace MathFunctions
 {
     public class MathFunctions
@@ -16,7 +19,7 @@ namespace MathFunctions
             bool program = true;
             while (program)
             {
-                Console.WriteLine("Welcome to my program! Please make a selection:");
+                Console.WriteLine("Please make a selection:");
                 Console.WriteLine("1. Calculate the circumference and area of a circle.");
                 Console.WriteLine("2. Calculate the volume of a hemisphere.");
                 Console.WriteLine("3. Calculate the area of a triangle.");
@@ -96,7 +99,7 @@ namespace MathFunctions
                 {
                     
                     MathFunctions hemisphereV = new MathFunctions();
-                    Console.WriteLine("Welcome to my program to calculate the volume of a hemisphere!");
+                    Console.WriteLine("Welcome to my program to calculate the volume of a hemisphere.");
                     Console.Write("Please enter the radius of your hemisphere: ");
                     double radius = Convert.ToDouble(Console.ReadLine());
                     double volume = hemisphereV.HemisV(radius);
@@ -134,7 +137,7 @@ namespace MathFunctions
                 {
                     MathFunctions triArea = new MathFunctions();
                     MathFunctions triP = new MathFunctions();
-                    Console.WriteLine("Welcome to my program to calculate the area of a triangle!");
+                    Console.WriteLine("Welcome to my program to calculate the area of a triangle.");
                     Console.Write("Please enter side one of your triangle: ");
                     double sideOne = Convert.ToDouble(Console.ReadLine());
                     Console.Write("Please enter side two of your triangle: ");
@@ -176,7 +179,7 @@ namespace MathFunctions
                 {
                     MathFunctions plusQuad = new MathFunctions();
                     MathFunctions minusQuad = new MathFunctions();
-                    Console.WriteLine("Welcome to my program to calculate a Quadratic Equation");
+                    Console.WriteLine("Welcome to my program to calculate a Quadratic Equation.");
                     Console.WriteLine("Quadratics are in the form ax^2 + bx + c = 0");
                     Console.Write("Please enter the a value of your quadratic: ");
                     double a = Convert.ToDouble(Console.ReadLine());
