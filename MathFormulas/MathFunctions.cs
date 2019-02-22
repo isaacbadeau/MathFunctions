@@ -5,9 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MathFunctions;
 
-//I feel like in the future I could have made interfaces/classes, and case/switch statements for a lot of
-//my procedures.  I just don't really know how to do it yet. This program works,
-//but I'm sure I will look back and realize I could have done differently.
+
 
 namespace MathFunctions
 {
@@ -25,16 +23,16 @@ namespace MathFunctions
                 switch (response)
                 {
                     case "1":
-                        CircleAreaCircum();
+                        function.CircleAreaCircum();
                         break;
                     case "2":
-                        HemisphereVolume();
+                        function.HemisphereVolume();
                         break;
                     case "3":
-                        TriangleArea();
+                        function.TriangleArea();
                         break;
                     case "4":
-                        QuadraticEquation();
+                        function.QuadraticEquation();
                         break;
                     case "5":
                         program = false;
@@ -46,7 +44,7 @@ namespace MathFunctions
             }
         }
 
-        public static void CircleAreaCircum()
+        public void CircleAreaCircum()
         {
             MathFunctions function = new MathFunctions();
             bool circumArea = true;
@@ -64,7 +62,7 @@ namespace MathFunctions
                 }
             }
         }
-        public static void HemisphereVolume()
+        public void HemisphereVolume()
         {
             MathFunctions function = new MathFunctions();
             bool hemisphereVolume = true;
@@ -82,7 +80,7 @@ namespace MathFunctions
                 }
             }
         }
-        public static void TriangleArea()
+        public void TriangleArea()
         {
             MathFunctions function = new MathFunctions();
             bool triangleArea = true;
@@ -99,7 +97,7 @@ namespace MathFunctions
                 }
             }
         }
-        public static void QuadraticEquation()
+        public void QuadraticEquation()
         {
             
             MathFunctions function = new MathFunctions();
