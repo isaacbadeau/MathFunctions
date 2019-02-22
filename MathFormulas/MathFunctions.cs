@@ -14,6 +14,7 @@ namespace MathFunctions
 
         public static void Main(string[] args)
         {
+            
             MathFunctions function = new MathFunctions();
             bool program = true;
             while (program)
