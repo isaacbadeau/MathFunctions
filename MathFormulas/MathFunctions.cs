@@ -52,7 +52,7 @@ namespace MathFunctions
             {
                 try
                 {
-function.CircleValues();
+                    function.CircleValues();
                     circumArea = function.ResponseYesNo();
                 }
                 catch (System.FormatException)
